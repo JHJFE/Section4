@@ -1,0 +1,41 @@
+
+const isValid = (str) => {
+    const open = ['(', '{', '['];
+    const close = [')', '}', ']'];
+    let result = [] , match = ''
+    if( str === ''){return false}
+    for (let el of str) {
+        if (open.includes(el)){
+            result.push(el)
+        }else if(close.includes(el)){
+            match = result.pop()
+            if(match === undefined){return false}
+            switch(match){
+                case '('
+                : if(el !== ')' ){ return false}
+                break
+                case '{'
+                : if(el !== '}' ){ return false}
+                break
+                case '['
+                : if(el !== ']' ){ return false}
+                break
+            }
+        }
+    }
+    return result.length === 0
+}
+
+
+
+const result1 = isValid(']');
+console.log(result1); // true
+
+const result2 = isValid('[)');
+console.log(result2); // false
+
+const result3 = isValid('[]{}()');
+console.log(result3); // true
+
+const result4 = isValid('[]{)()');
+console.log(result4); // false

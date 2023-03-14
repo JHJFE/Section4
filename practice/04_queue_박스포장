@@ -1,0 +1,30 @@
+function paveBox(boxes) {
+    // TODO: 여기에 코드를 작성합니다.
+    let count = 0, people = [1]
+    let temp
+    let standard = boxes.shift()
+   // console.log('기준',standard)
+    while (boxes.length !== 0) {
+
+        count = boxes.shift() // 1 , 5
+      //  console.log('비교',count)
+        if (standard >= count) {
+            console.log(count)
+            temp = people[people.length-1]
+            temp++
+            people[people.length-1] = temp
+            //console.log(people);
+        } else{
+            standard = count
+            people.push(1)
+        }
+    }
+    return Math.max(...people)
+}
+const boxes = [5, 1, 4, 6];
+const output = paveBox(boxes);
+console.log(output); // 3
+
+const boxes2 = [95, 90,88,88,88,88, 99, 99, 80, 99,100,101,101,101,101,101,101,101,101,101,101];
+const output2 = paveBox(boxes2);
+console.log(output2); // 4
