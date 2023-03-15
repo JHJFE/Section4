@@ -1,0 +1,53 @@
+// Definition for a binary tree node.
+// class TreeNode {
+//   constructor(val = 0, left = null, right = null) {
+//   this.val = val;
+//   this.left = left;
+//   this.right = right;
+//   }
+// }
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+
+
+
+const postOrderTraversal = (root) => {
+
+	let result = []
+	function check(croot) {
+		if (croot === null) { return }
+		check(croot.left)
+		check(croot.right)
+		result.push(croot.val)
+	}
+	check(root)
+	return result
+	
+}
+class TreeNode {
+	constructor(val, left, right) {
+		this.val = val === undefined ? 0 : val;
+		this.left = left === undefined ? null : left;
+		this.right = right === undefined ? null : right;
+	}
+}
+
+//     1
+//      \
+//       2
+//      /
+//     3
+const root1 = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
+
+const result1 = postOrderTraversal(root1);
+console.log(result1); // [3, 2, 1]
+
+// const root2 = null;
+// const result2 = postOrderTraversal(root2);
+// console.log(result2); // []
+
+// const root3 = new TreeNode(1);
+// const result3 = postOrderTraversal(root3);
+// console.log(result3); // [1]

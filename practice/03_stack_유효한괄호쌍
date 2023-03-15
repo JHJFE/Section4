@@ -1,7 +1,7 @@
-
 const isValid = (str) => {
     const open = ['(', '{', '['];
     const close = [')', '}', ']'];
+    
     let result = [] , match = ''
     if( str === ''){return false}
     for (let el of str) {
