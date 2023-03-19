@@ -1,0 +1,115 @@
+* {
+  font-family: 'NanumBarunGothic';
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  text-decoration: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.test{
+  background-color: red;
+  height: 30px;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  height: 100%;
+  overflow: scroll;
+}
+
+/* @media screen (max-width: 800px) {
+  body {
+    color: red;
+  }
+} */
+.type:nth-child(1){
+  grid-row:1/4
+}.type:nth-child(1){
+  grid-row: 1/2
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  width: 1150px;
+}
+@media screen and (max-width: 1200px) {
+  .grid{
+    grid-template-columns: 1fr 1fr;
+    width: 1100px;
+  }
+  .bar-container{
+    width: 90%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .grid{
+    grid-template-columns: 1fr;
+    width: 450px;
+  }
+  .bar-container{
+    width: 90%;
+  }
+}
+.con{
+  height: 800px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+  margin: 10px;
+}
+.grow1{
+  flex-grow: 1;
+}
+.grow1-5{
+  flex-grow: 1.5;
+}
+.grow2{
+  flex-grow: 2;
+}
+.grow3{
+  flex-grow: 3;
+}
+.icon{
+  font-size: 38px;
+  margin: 7px;
+}
+.App{
+  background-color: #f2f4f7;
+}
+.bold{
+  font-weight: bolder;
+  font-size: larger;
+}
+.header{
+  height: 115px;
+}
+.justify-content-center{
+  display: flex;
+  justify-content: center;
+}
+.mic{
+  font-size: 38px;
+  margin: 7px;
+  color: #4fd779;
+}
+.favorite-icon{
+  width: 60px;
+}
+.column{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
